@@ -1,0 +1,12 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"wordmark": "Bekcan Satarov",
+	"about": "Hakkımda",
+	"services": "Hizmetler",
+	"projects": "Projeler",
+	"blog": "Blog",
+	"contacts": "İletişim",
+	"dark": "Karanlık",
+	"light": "Aydınlık",
+	"language": "Dil"
+}

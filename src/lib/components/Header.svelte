@@ -1,57 +1,132 @@
 <script lang="ts">
-	import { Translate2Editor } from 'svelte-remix';
+	import { Menu3LineSystem, CloseLineSystem } from 'svelte-remix';
+	import * as m from '$lib/paraglide/messages.js';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
+	import LanguageSelect from '$lib/components/LanguageSelect.svelte';
+
+	const links = [
+		{
+			label: m.about(),
+			href: '/',
+			child: [
+				{ label: 'About Me', href: '/' },
+				{ label: 'Employment History', href: '/' },
+				{ label: 'Education', href: '/' }
+			]
+		},
+		{
+			label: m.services(),
+			href: '/',
+			child: [
+				{ label: 'Employment', href: '/' },
+				{ label: 'Freelance', href: '/' },
+				{ label: 'Collaboration', href: '/' }
+			]
+		},
+		{ label: m.projects(), href: '/' },
+		{ label: m.blog(), href: '/' },
+		{
+			label: m.contacts(),
+			href: '/',
+			child: [
+				{ label: 'Get in Touch', href: '/' },
+				{ label: 'Schedule a Call', href: '/' }
+			]
+		}
+	];
 </script>
 
 <header
-	class="px-2 py-2 flex gap-2 border-b border-neutral-100 dark:border-neutral-900 sticky top-0 bg-white dark:bg-black z-10"
+	class="px-2 py-2 flex gap-2 border-b border-neutral-100 dark:border-neutral-900 sticky top-0 bg-white dark:bg-black z-10 items-center"
 >
-	<a href="/" class="anchor font-bold">Bekzhan Satarov</a>
+	<a
+		href="/"
+		class="flex items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 font-bold whitespace-pre"
+		>{m.wordmark()}</a
+	>
 
-	<details class="details group">
-		<summary class="details-summary">About Me</summary>
-		<ul class="details-content w-48">
-			<li><a href="/" class="anchor w-full">About Me</a></li>
-			<li><a href="/" class="anchor w-full">Employment History</a></li>
-			<li><a href="/" class="anchor w-full">Education</a></li>
-		</ul>
-	</details>
-
-	<details class="details group">
-		<summary class="details-summary">Services</summary>
-		<ul class="details-content w-36">
-			<li><a href="/" class="anchor w-full">Employment</a></li>
-			<li><a href="/" class="anchor w-full">Freelance</a></li>
-			<li><a href="/" class="anchor w-full">Collaboration</a></li>
-		</ul>
-	</details>
-
-	<a href="/" class="anchor">Projects</a>
-
-	<a href="/" class="anchor">Blog</a>
-
-	<details class="details group">
-		<summary class="details-summary">Contact</summary>
-		<ul class="details-content w-40">
-			<li><a href="/" class="anchor w-full">Get in Touch</a></li>
-			<li><a href="/" class="anchor w-full">Schedule a Call</a></li>
-		</ul>
-	</details>
+	{#each links as { label, href, child }}
+		{#if child}
+			<details class="relative group hidden md:block">
+				<summary
+					class="flex items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer pr-6 group-open:bg-neutral-100 dark:group-open:bg-neutral-900 before:content-['+'] before:absolute before:right-2 before:top-1/2 before:-translate-y-1/2 before:text-neutral-500 group-open:before:content-['−'] group-open:before:font-semibold whitespace-pre"
+					>{label}
+				</summary>
+				<ul
+					class="absolute top-12 p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-48"
+				>
+					{#each child as { label, href }}
+						<li>
+							<a
+								{href}
+								class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
+								>{label}</a
+							>
+						</li>
+					{/each}
+				</ul>
+			</details>
+		{:else}
+			<a
+				{href}
+				class="items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 hidden md:flex"
+				>{label}</a
+			>
+		{/if}
+	{/each}
 
 	<div class="flex-1"></div>
 
 	<ThemeSwitch />
 
-	<details class="details group">
-		<summary class="details-summary pr-2 before:content-[''] group-open:before:content-['']"
-			><Translate2Editor size="1rem" tabindex="-1" />Language</summary
+	<LanguageSelect />
+
+	<details class="relative group md:hidden">
+		<summary
+			class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-open:bg-neutral-100 dark:group-open:bg-neutral-900 py-2 md:py-1"
 		>
-		<ul class="details-content w-full right-0">
-			<li><a href="/" class="anchor w-full">English</a></li>
-			<li><a href="/" class="anchor w-full">Русский</a></li>
-			<li><a href="/" class="anchor w-full">Deutsch</a></li>
-			<li><a href="/" class="anchor w-full">Türkçe</a></li>
-			<li><a href="/" class="anchor w-full">Кыргызча</a></li>
+			<Menu3LineSystem
+				size="1rem"
+				tabindex="-1"
+				aria-hidden="true"
+				focusable="false"
+				class="group-open:hidden"
+			/>
+			<CloseLineSystem
+				size="1rem"
+				tabindex="-1"
+				aria-hidden="true"
+				focusable="false"
+				class="hidden group-open:inline"
+			/>
+		</summary>
+		<ul
+			class="absolute top-12 p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-80 right-0"
+		>
+			{#each links as { label, href, child }, i}
+				{#if i > 0}
+					<hr class="my-1.5 border-neutral-100" />
+				{/if}
+				{#if child}
+					{#each child as { label, href }}
+						<li>
+							<a
+								{href}
+								class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
+								>{label}</a
+							>
+						</li>
+					{/each}
+				{:else}
+					<li>
+						<a
+							{href}
+							class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
+							>{label}</a
+						>
+					</li>
+				{/if}
+			{/each}
 		</ul>
 	</details>
 </header>

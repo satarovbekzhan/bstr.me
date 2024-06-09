@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { SunLineWeather, MoonLineWeather } from 'svelte-remix';
+	import * as m from '$lib/paraglide/messages.js';
 
 	let isDarkMode = true;
 
@@ -38,12 +39,15 @@
 	</script>
 </svelte:head>
 
-<button on:click={switchTheme} class="anchor">
+<button
+	on:click={switchTheme}
+	class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 py-2 lg:py-1"
+>
 	{#if isDarkMode}
-		<MoonLineWeather size="1rem" tabindex="-1" />
-		Dark
+		<MoonLineWeather size="1rem" tabindex="-1" aria-hidden="true" focusable="false" />
+		<span class="hidden lg:inline">{m.dark()}</span>
 	{:else}
-		<SunLineWeather size="1rem" tabindex="-1" />
-		Light
+		<SunLineWeather size="1rem" tabindex="-1" aria-hidden="true" focusable="false" />
+		<span class="hidden lg:inline">{m.light()}</span>
 	{/if}
 </button>

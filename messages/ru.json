@@ -1,0 +1,12 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"wordmark": "Бекжан Сатаров",
+	"about": "Обо мне",
+	"services": "Услуги",
+	"projects": "Проекты",
+	"blog": "Блог",
+	"contacts": "Контакты",
+	"dark": "Темный",
+	"light": "Светлый",
+	"language": "Язык"
+}

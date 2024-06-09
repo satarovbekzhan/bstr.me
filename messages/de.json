@@ -1,0 +1,12 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"wordmark": "Bekzhan Satarov",
+	"about": "Über mich",
+	"services": "Dienstleistungen",
+	"projects": "Projekte",
+	"blog": "Blog",
+	"contacts": "Kontakte",
+	"dark": "Dunkel",
+	"light": "Hell",
+	"language": "Sprache"
+}
