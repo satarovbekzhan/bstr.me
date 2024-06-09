@@ -14,3 +14,25 @@
 			url('/fonts/RobotoMono-VariableFont_wght.ttf');
 	}
 }
+
+@layer components {
+	.anchor {
+		@apply flex items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900;
+	}
+	.details {
+		@apply relative;
+	}
+	.details-summary {
+		@apply anchor cursor-pointer pr-6 group-open:bg-neutral-100 dark:group-open:bg-neutral-900 before:content-['+'] before:absolute before:right-2 before:top-1/2 before:-translate-y-1/2 before:text-neutral-500 group-open:before:content-['−'] group-open:before:font-semibold;
+	}
+	.details-content {
+		@apply absolute top-12 p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-52;
+	}
+}
+
+body {
+	transition:
+		background-color 0.5s,
+		color 0.5s;
+	@apply bg-white dark:bg-black text-black dark:text-white;
+}
