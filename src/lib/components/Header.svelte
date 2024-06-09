@@ -7,31 +7,17 @@
 	const links = [
 		{
 			label: m.about(),
-			href: '/',
-			child: [
-				{ label: 'About Me', href: '/' },
-				{ label: 'Employment History', href: '/' },
-				{ label: 'Education', href: '/' }
-			]
+			href: '/#about-me'
 		},
 		{
 			label: m.services(),
-			href: '/',
-			child: [
-				{ label: 'Employment', href: '/' },
-				{ label: 'Freelance', href: '/' },
-				{ label: 'Collaboration', href: '/' }
-			]
+			href: '/services'
 		},
-		{ label: m.projects(), href: '/' },
-		{ label: m.blog(), href: '/' },
+		{ label: m.projects(), href: '/projects' },
+		{ label: m.blog(), href: '/blog' },
 		{
 			label: m.contacts(),
-			href: '/',
-			child: [
-				{ label: 'Get in Touch', href: '/' },
-				{ label: 'Schedule a Call', href: '/' }
-			]
+			href: '/#contacts'
 		}
 	];
 </script>
@@ -45,34 +31,12 @@
 		>{m.wordmark()}</a
 	>
 
-	{#each links as { label, href, child }}
-		{#if child}
-			<details class="relative group hidden md:block">
-				<summary
-					class="flex items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer pr-6 group-open:bg-neutral-100 dark:group-open:bg-neutral-900 before:content-['+'] before:absolute before:right-2 before:top-1/2 before:-translate-y-1/2 before:text-neutral-500 group-open:before:content-['−'] group-open:before:font-semibold whitespace-pre"
-					>{label}
-				</summary>
-				<ul
-					class="absolute top-12 p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-48"
-				>
-					{#each child as { label, href }}
-						<li>
-							<a
-								{href}
-								class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
-								>{label}</a
-							>
-						</li>
-					{/each}
-				</ul>
-			</details>
-		{:else}
-			<a
-				{href}
-				class="items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 hidden md:flex"
-				>{label}</a
-			>
-		{/if}
+	{#each links as { label, href }}
+		<a
+			{href}
+			class="items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 hidden md:flex"
+			>{label}</a
+		>
 	{/each}
 
 	<div class="flex-1"></div>
@@ -81,8 +45,28 @@
 
 	<LanguageSelect />
 
-	<details class="relative group md:hidden">
-		<summary
+	<div
+		class="relative group md:hidden"
+		role="menu"
+		tabindex="0"
+		on:mouseenter={(event) => {
+			event.currentTarget.setAttribute('open', '');
+		}}
+		on:mouseleave={(event) => {
+			event.currentTarget.removeAttribute('open');
+		}}
+		on:keydown={(event) => {
+			if (event.key === 'Enter') {
+				const isOpen = event.currentTarget.hasAttribute('open');
+				if (isOpen) {
+					event.currentTarget.removeAttribute('open');
+				} else {
+					event.currentTarget.setAttribute('open', '');
+				}
+			}
+		}}
+	>
+		<div
 			class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-open:bg-neutral-100 dark:group-open:bg-neutral-900 py-2 md:py-1"
 		>
 			<Menu3LineSystem
@@ -99,25 +83,12 @@
 				focusable="false"
 				class="hidden group-open:inline"
 			/>
-		</summary>
-		<ul
-			class="absolute top-12 p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-80 right-0"
-		>
-			{#each links as { label, href, child }, i}
-				{#if i > 0}
-					<hr class="my-1.5 border-neutral-100" />
-				{/if}
-				{#if child}
-					{#each child as { label, href }}
-						<li>
-							<a
-								{href}
-								class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
-								>{label}</a
-							>
-						</li>
-					{/each}
-				{:else}
+		</div>
+		<div class="absolute hidden group-open:flex group-open:flex-col top-8 pt-4 right-0">
+			<ul
+				class="p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-52"
+			>
+				{#each links as { label, href }}
 					<li>
 						<a
 							{href}
@@ -125,8 +96,8 @@
 							>{label}</a
 						>
 					</li>
-				{/if}
-			{/each}
-		</ul>
-	</details>
+				{/each}
+			</ul>
+		</div>
+	</div>
 </header>
