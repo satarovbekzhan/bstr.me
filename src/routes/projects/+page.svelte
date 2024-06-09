@@ -3,5 +3,5 @@
 </script>
 
 <main>
-	<h1 class="text-4xl">{m.projects()}</h1>
+	<!-- <h1 class="text-4xl">{m.projects()}</h1> -->
 </main>
