@@ -24,3 +24,13 @@ body {
 		color 0.1s ease-in;
 	@apply bg-white dark:bg-black text-black dark:text-white;
 }
+
+/* :root {
+	--soluna-bg-color: yellow;
+	--soluna-shadow-color: rgba(255, 255, 0, 0.4);
+}
+
+.dark {
+	--soluna-bg-color: #f0f0f0;
+	--soluna-shadow-color: rgba(240, 240, 240, 0.2);
+} */

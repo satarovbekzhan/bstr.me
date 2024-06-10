@@ -8,5 +8,7 @@
 	"contacts": "Contacts",
 	"dark": "Dark",
 	"light": "Light",
-	"language": "Language"
+	"language": "Language",
+	"soon": "Soon",
+	"copy": "© {year} Bekzhan Satarov. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached, or otherwise used, except with the prior written permission of Bekzhan Satarov."
 }

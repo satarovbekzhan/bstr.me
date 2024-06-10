@@ -12,6 +12,7 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
+		"@inlang/paraglide-js": "1.9.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -30,12 +31,12 @@
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.0.0-alpha.20",
-		"vite": "^5.0.3",
-		"@inlang/paraglide-js": "1.9.1"
+		"vite": "^5.0.3"
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-remix": "^1.0.3",
-		"@inlang/paraglide-sveltekit": "0.9.6"
+		"@inlang/paraglide-sveltekit": "0.9.6",
+		"classnames": "^2.5.1",
+		"svelte-remix": "^1.0.3"
 	}
 }
