@@ -44,10 +44,20 @@
 	class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 py-2 lg:py-1"
 >
 	{#if isDarkMode}
-		<MoonLineWeather size="1rem" tabindex="-1" aria-hidden="true" focusable="false" />
+		<MoonLineWeather
+			tabindex="-1"
+			aria-hidden="true"
+			focusable="false"
+			class="w-4 h-4 inline-block"
+		/>
 		<span class="hidden lg:inline">{m.dark()}</span>
 	{:else}
-		<SunLineWeather size="1rem" tabindex="-1" aria-hidden="true" focusable="false" />
+		<SunLineWeather
+			tabindex="-1"
+			aria-hidden="true"
+			focusable="false"
+			class="w-4 h-4 inline-block"
+		/>
 		<span class="hidden lg:inline">{m.light()}</span>
 	{/if}
 </button>

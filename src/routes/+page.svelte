@@ -18,7 +18,7 @@
 				on:click={() => {
 					alert(`Hey, hey, hey! Give a high "tab" and keep going!`);
 				}}
-				class="appearance-none absolute top-0 right-0 md:top-4 md:right-8 lg:top-8 lg:right-16 -z-10 h-16 w-16 rounded-full blur-[1px] m-12 bg-[#FFFF00] shadow-[0_0_100px_50px_#FFFF0050] dark:bg-[#f0f0f0] dark:shadow-[0_0_100px_50px_#f0f0f040] cursor-pointer pointer-events-[all]"
+				class="appearance-none absolute -top-8 right-0 md:top-4 md:right-8 lg:top-8 lg:right-16 -z-10 h-16 w-16 rounded-full blur-[1px] m-12 bg-[#FFFF00] shadow-[0_0_100px_50px_#FFFF0050] dark:bg-[#f0f0f0] dark:shadow-[0_0_100px_50px_#f0f0f040] cursor-pointer pointer-events-[all]"
 			></button>
 			<p class="text-3xl md:text-4xl lg:text-5xl">Discover</p>
 			<h1 class="text-7xl md:text-8xl lg:text-9xl font-black">Bekzhan!</h1>
@@ -37,7 +37,7 @@
 			collaboration and attention to detail. Skilled in crafting optimal user experiences through
 			effective collaboration with UX/UI teams. Proficient in various programming languages and
 			frameworks, with a solid educational background in computer science. Fluent in Kyrgyz,
-			Russian, and English, with intermediate proficiency in German and Turkish
+			Russian, and English, with intermediate proficiency in German and Turkish.
 		</p>
 	</section>
 
@@ -132,16 +132,7 @@
 			Feel free to reach out to me with any questions or opportunities. I am always open to new
 			challenges and collaborations.
 		</p>
+
 		<ContactForm />
 	</section>
 </main>
-
-<!-- <style lang="postcss">
-	.soluna {
-		@apply fixed top-40 right-40 z-50 h-24 w-24 rounded-full;
-		background-color: var(--soluna-bg-color);
-		box-shadow: 0 0 100px 50px var(--soluna-shadow-color);
-		filter: blur(1px);
-		margin: 50px;
-	}
-</style> -->

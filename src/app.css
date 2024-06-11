@@ -19,8 +19,13 @@
 }
 
 body {
+	@apply bg-white dark:bg-black text-black dark:text-white;
 	transition:
 		background-color 0.1s ease-in,
 		color 0.1s ease-in;
-	@apply bg-white dark:bg-black text-black dark:text-white;
+	scroll-behavior: smooth;
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
 }

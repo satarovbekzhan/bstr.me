@@ -8,7 +8,9 @@
 </script>
 
 <ParaglideJS {i18n}>
-	<div class="min-h-[100dvh] flex flex-col font-body">
+	<div
+		class="min-h-[100dvh] flex flex-col font-body selection:bg-black/25 dark:selection:bg-white/25"
+	>
 		<Header />
 		<slot />
 		<Footer />

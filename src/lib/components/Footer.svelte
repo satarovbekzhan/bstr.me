@@ -62,7 +62,7 @@
 		{/each}
 	</div> -->
 	<div class="bg-neutral-100 dark:bg-neutral-900">
-		<p class="container mx-auto text-sm p-4 text-balance">
+		<p class="container mx-auto p-4 text-balance">
 			{m.copy({ year: new Date().getFullYear() })}
 		</p>
 	</div>

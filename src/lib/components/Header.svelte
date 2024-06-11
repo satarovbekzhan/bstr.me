@@ -23,7 +23,7 @@
 </script>
 
 <header
-	class="border-b border-neutral-100 dark:border-neutral-900 sticky top-0 bg-white dark:bg-black z-10"
+	class="border-b border-neutral-100 dark:border-neutral-900 sticky top-0 bg-white/80 dark:bg-black/80 z-10 backdrop-blur"
 >
 	<nav class="container mx-auto px-2 py-2 flex gap-2 items-center">
 		<a
@@ -70,18 +70,16 @@
 				class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-open:bg-neutral-100 dark:group-open:bg-neutral-900 py-2 md:py-1"
 			>
 				<Menu3LineSystem
-					size="1rem"
 					tabindex="-1"
 					aria-hidden="true"
 					focusable="false"
-					class="group-open:hidden"
+					class="inline-block group-open:hidden w-4 h-4"
 				/>
 				<CloseLineSystem
-					size="1rem"
 					tabindex="-1"
 					aria-hidden="true"
 					focusable="false"
-					class="hidden group-open:inline"
+					class="hidden group-open:inline-block w-4 h-4"
 				/>
 			</div>
 			<div class="absolute hidden group-open:flex group-open:flex-col top-8 pt-4 right-0">
