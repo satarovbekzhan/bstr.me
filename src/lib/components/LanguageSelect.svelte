@@ -16,7 +16,6 @@
 
 <div
 	class="relative group"
-	role="menu"
 	tabindex="0"
 	on:mouseenter={(event) => {
 		event.currentTarget.setAttribute('open', '');
@@ -43,10 +42,11 @@
 	</div>
 	<div class="absolute hidden group-open:flex group-open:flex-col top-8 pt-4 right-0">
 		<ul
+			role="menu"
 			class="p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-44"
 		>
 			{#each availableLanguageTags as lang}
-				<li>
+				<li role="menuitem">
 					<a
 						href={i18n.route($page.url.pathname)}
 						hreflang={lang}

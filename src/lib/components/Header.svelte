@@ -48,7 +48,6 @@
 
 		<div
 			class="relative group md:hidden"
-			role="menu"
 			tabindex="0"
 			on:mouseenter={(event) => {
 				event.currentTarget.setAttribute('open', '');
@@ -87,10 +86,11 @@
 			</div>
 			<div class="absolute hidden group-open:flex group-open:flex-col top-8 pt-4 right-0">
 				<ul
+					role="menu"
 					class="p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-52"
 				>
 					{#each links as { label, href }}
-						<li>
+						<li role="menuitem">
 							<a
 								{href}
 								class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"

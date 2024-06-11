@@ -12,9 +12,14 @@
 <main>
 	<section id="hero" class="pt-12">
 		<div class="container mx-auto px-4 relative">
-			<div
-				class="absolute top-0 right-0 md:top-4 md:right-8 lg:top-8 lg:right-16 -z-10 h-16 w-16 rounded-full blur-[1px] m-12 bg-[yellow] shadow-[0_0_100px_50px_rgba(255,255,0,0.2)] dark:bg-[#f0f0f0] dark:shadow-[0_0_100px_50px_rgba(240,240,240,0.2)]"
-			></div>
+			<button
+				tabindex="0"
+				aria-label="Soluna"
+				on:click={() => {
+					alert(`Hey, hey, hey! Give a high "tab" and keep going!`);
+				}}
+				class="appearance-none absolute top-0 right-0 md:top-4 md:right-8 lg:top-8 lg:right-16 -z-10 h-16 w-16 rounded-full blur-[1px] m-12 bg-[#FFFF00] shadow-[0_0_100px_50px_#FFFF0050] dark:bg-[#f0f0f0] dark:shadow-[0_0_100px_50px_#f0f0f040] cursor-pointer pointer-events-[all]"
+			></button>
 			<p class="text-3xl md:text-4xl lg:text-5xl">Discover</p>
 			<h1 class="text-7xl md:text-8xl lg:text-9xl font-black">Bekzhan!</h1>
 			<p class="text-2xl md:text-3xl lg:text-4xl">Bridging the tech world from</p>
