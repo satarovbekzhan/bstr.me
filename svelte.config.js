@@ -1,5 +1,5 @@
-// import adapter from '@sveltejs/adapter-auto'; // Node
-import adapter from 'svelte-adapter-bun'; // bun
+import adapter from '@sveltejs/adapter-auto'; // Node
+// import adapter from 'svelte-adapter-bun'; // bun
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
