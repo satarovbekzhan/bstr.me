@@ -2,8 +2,8 @@ import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types.js';
 import {
 	GOOGLE_RECATCHA_SECRET_KEY,
-	SATAROVBEKZHAN_BOT_TOKEN,
-	SATAROVBEKZHAN_USER_ID
+	TELEGRAM_BOT_TOKEN,
+	TELEGRAM_USER_ID
 } from '$env/static/private';
 
 export const actions: Actions = {
@@ -35,7 +35,7 @@ export const actions: Actions = {
 			});
 
 			await fetch(
-				`https://api.telegram.org/bot${SATAROVBEKZHAN_BOT_TOKEN}/sendMessage?chat_id=${SATAROVBEKZHAN_USER_ID}&text=${name}%20${email}%0A%0A${message}`
+				`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_USER_ID}&text=${name}%20${email}%0A%0A${message}`
 			);
 
 			return {};
