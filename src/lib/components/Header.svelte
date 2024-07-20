@@ -9,12 +9,12 @@
 			label: m.about(),
 			href: '/#about-me'
 		},
-		// {
-		// 	label: m.services(),
-		// 	href: '/services'
-		// },
-		// { label: m.projects(), href: '/projects' },
-		// { label: m.blog(), href: '/blog' },
+		{
+			label: m.services(),
+			href: '/services'
+		},
+		{ label: m.cv(), href: '/cv' },
+		{ label: m.blog(), href: '/blog' },
 		{
 			label: m.contacts(),
 			href: '/#contacts'
@@ -22,23 +22,13 @@
 	];
 </script>
 
-<header
-	class="border-b border-neutral-100 dark:border-neutral-900 sticky top-0 bg-white/80 dark:bg-black/80 z-10 backdrop-blur"
->
-	<nav class="container mx-auto px-2 py-2 flex gap-2 items-center">
+<header class="sticky top-0 bg-white dark:bg-black z-10">
+	<nav class="p-2 md:p-3 lg:p-4 flex gap-2 md:gap-3 lg:gap-4 items-center">
 		<a
 			href="/"
-			class="flex items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 font-bold whitespace-pre"
+			class="flex items-center gap-2 w-fit h-8 md:h-10 lg:h-12 overflow-hidden rounded-sm px-2 py-1 text-base md:text-2xl lg:text-4xl hover:bg-neutral-100 dark:hover:bg-neutral-900 font-medium whitespace-pre"
 			>{m.wordmark()}</a
 		>
-
-		{#each links as { label, href }}
-			<a
-				{href}
-				class="items-center gap-2 w-fit rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 hidden md:flex"
-				>{label}</a
-			>
-		{/each}
 
 		<div class="flex-1"></div>
 
@@ -46,43 +36,27 @@
 
 		<LanguageSelect />
 
-		<div
-			class="relative group md:hidden"
-			tabindex="0"
-			on:mouseenter={(event) => {
-				event.currentTarget.setAttribute('open', '');
-			}}
-			on:mouseleave={(event) => {
-				event.currentTarget.removeAttribute('open');
-			}}
-			on:keydown={(event) => {
-				if (event.key === 'Enter') {
-					const isOpen = event.currentTarget.hasAttribute('open');
-					if (isOpen) {
-						event.currentTarget.removeAttribute('open');
-					} else {
-						event.currentTarget.setAttribute('open', '');
-					}
-				}
-			}}
-		>
+		<div role="menu" class="relative group" tabindex="0">
 			<div
-				class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-open:bg-neutral-100 dark:group-open:bg-neutral-900 py-2 md:py-1"
+				aria-label={m.menu()}
+				class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-focus-within:bg-neutral-100 dark:group-focus-within:bg-neutral-900 py-2 md:py-1 aspect-square"
 			>
 				<Menu3LineSystem
 					tabindex="-1"
 					aria-hidden="true"
-					focusable="false"
-					class="inline-block group-open:hidden w-4 h-4"
+					focusable={false}
+					class="inline-block group-focus-within:hidden w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 pointer-events-none"
 				/>
 				<CloseLineSystem
 					tabindex="-1"
 					aria-hidden="true"
-					focusable="false"
-					class="hidden group-open:inline-block w-4 h-4"
+					focusable={false}
+					class="hidden group-focus-within:inline-block w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 pointer-events-none"
 				/>
 			</div>
-			<div class="absolute hidden group-open:flex group-open:flex-col top-8 pt-4 right-0">
+			<div
+				class="pointer-events-none group-focus-within:pointer-events-auto opacity-0 group-focus-within:opacity-100 absolute flex flex-col top-6 md:top-5 lg:top-4 pt-4 md:pt-8 lg:pt-12 right-0"
+			>
 				<ul
 					role="menu"
 					class="p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-52"
@@ -91,7 +65,7 @@
 						<li role="menuitem">
 							<a
 								{href}
-								class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
+								class="flex items-center gap-2 rounded-sm px-2 py-1 text-lg md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
 								>{label}</a
 							>
 						</li>

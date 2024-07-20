@@ -3,12 +3,15 @@
 	"wordmark": "Bekcan Satarov",
 	"about": "Hakkımda",
 	"services": "Hizmetler",
-	"projects": "Projeler",
+	"cv": "Özgeçmiş",
 	"blog": "Blog",
 	"contacts": "İletişim",
 	"dark": "Karanlık",
 	"light": "Aydınlık",
 	"language": "Dil",
+	"menu": "Menü",
 	"soon": "Yakında",
-	"copy": "© {year} Bekzhan Satarov. Tüm hakları saklıdır. Bu sitedeki materyal, Bekzhan Satarov'un önceden yazılı izni olmadan kopyalanamaz, dağıtılamaz, iletilemez, önbelleğe alınamaz veya başka bir şekilde kullanılamaz."
+	"copy": "© {year} Bekzhan Satarov. Tüm hakları saklıdır. Bu sitedeki materyal, Bekzhan Satarov'un önceden yazılı izni olmadan kopyalanamaz, dağıtılamaz, iletilemez, önbelleğe alınamaz veya başka bir şekilde kullanılamaz.",
+	"homepage_greeting": "Merhaba!",
+	"homepage_world": "Dünya"
 }

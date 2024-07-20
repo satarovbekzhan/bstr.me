@@ -40,24 +40,23 @@
 </svelte:head>
 
 <button
+	aria-label={isDarkMode ? m.light() : m.dark()}
 	on:click={switchTheme}
-	class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 py-2 lg:py-1"
+	class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 py-2 lg:py-1 aspect-square"
 >
 	{#if isDarkMode}
 		<MoonLineWeather
 			tabindex="-1"
 			aria-hidden="true"
 			focusable="false"
-			class="w-4 h-4 inline-block"
+			class="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 inline-block outline-none"
 		/>
-		<span class="hidden lg:inline">{m.dark()}</span>
 	{:else}
 		<SunLineWeather
 			tabindex="-1"
 			aria-hidden="true"
 			focusable="false"
-			class="w-4 h-4 inline-block"
+			class="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 inline-block outline-none"
 		/>
-		<span class="hidden lg:inline">{m.light()}</span>
 	{/if}
 </button>

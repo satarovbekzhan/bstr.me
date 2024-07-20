@@ -11,19 +11,22 @@
 
 <main>
 	<section id="hero" class="pt-12">
-		<div class="container mx-auto px-4 relative">
-			<button
+		<div class="p-4 md:p-5 lg:p-6 mx-auto relative">
+			<!-- <button
 				tabindex="0"
 				aria-label="Soluna"
 				on:click={() => {
 					alert(`Hey, hey, hey! Give a high "tab" and keep going!`);
 				}}
-				class="appearance-none absolute -top-8 right-0 md:top-4 md:right-8 lg:top-8 lg:right-16 -z-10 h-16 w-16 rounded-full blur-[1px] m-12 bg-[#FFFF00] shadow-[0_0_100px_50px_#FFFF0050] dark:bg-[#f0f0f0] dark:shadow-[0_0_100px_50px_#f0f0f040] cursor-pointer pointer-events-[all]"
-			></button>
-			<p class="text-3xl md:text-4xl lg:text-5xl">Discover</p>
-			<h1 class="text-7xl md:text-8xl lg:text-9xl font-black">Bekzhan!</h1>
-			<p class="text-2xl md:text-3xl lg:text-4xl">Bridging the tech world from</p>
-			<p class="text-4xl md:text-5xl lg:text-6xl font-bold">Kyrgyzstan</p>
+				class="appearance-none absolute -top-8 right-0 md:top-4 md:right-8 lg:top-8 lg:right-28 -z-10 h-12 w-12 rounded-full blur-[1px] m-12 bg-[#FFFF00] shadow-[0_0_100px_50px_#FFFF0050] dark:bg-[#f0f0f0] dark:shadow-[0_0_100px_50px_#f0f0f040] cursor-pointer pointer-events-[all]"
+			></button> -->
+
+			<p class="text-7xl md:text-8xl lg:text-9xl font-black -ml-1 md:-ml-1.5 lg:-ml-2">
+				{m.homepage_greeting()}
+			</p>
+			<p class="text-5xl md:text-6xl lg:text-7xl font-medium -ml-0.5 md:-ml-1 lg:-ml-1.5">
+				{m.homepage_world()}
+			</p>
 		</div>
 		<div class="mt-4 md:mt-6 lg:mt-8 w-full overflow-x-hidden">
 			<MountainsIllustration clazz="min-w-[40rem]" />

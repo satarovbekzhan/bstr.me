@@ -5,8 +5,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				body: ['Roboto Slab'],
-				mono: ['Roboto Mono']
+				body: ['Noto Sans'],
+				mono: ['Noto Sans Mono']
 			},
 			keyframes: {
 				'lds-ellipsis-1': {

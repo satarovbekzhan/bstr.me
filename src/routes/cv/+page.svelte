@@ -3,12 +3,10 @@
 </script>
 
 <svelte:head>
-	<title>{m.wordmark()} - {m.projects()}</title>
+	<title>{m.wordmark()} - {m.cv()}</title>
 	<meta name="description" content={m.wordmark()} />
 </svelte:head>
 
-<main class="flex-1">
-	<section class="container mx-auto px-4 py-8">
-		<p class="text-base">{m.soon()}!</p>
-	</section>
+<main>
+	<h1>CV</h1>
 </main>

@@ -3,12 +3,15 @@
 	"wordmark": "Bekzhan Satarov",
 	"about": "About Me",
 	"services": "Services",
-	"projects": "Projects",
+	"cv": "Resume",
 	"blog": "Blog",
 	"contacts": "Contacts",
 	"dark": "Dark",
 	"light": "Light",
 	"language": "Language",
+	"menu": "Menu",
 	"soon": "Soon",
-	"copy": "© {year} Bekzhan Satarov. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached, or otherwise used, except with the prior written permission of Bekzhan Satarov."
+	"copy": "© {year} Bekzhan Satarov. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached, or otherwise used, except with the prior written permission of Bekzhan Satarov.",
+	"homepage_greeting": "Hello!",
+	"homepage_world": "World"
 }

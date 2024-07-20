@@ -4,14 +4,15 @@
 
 @layer base {
 	@font-face {
-		font-family: 'Roboto Slab';
-		src: local('Roboto Slab'), local('roboto slab'), local('Roboto-Slab'), local('roboto-slab'),
-			url('/fonts/RobotoSlab-VariableFont_wght.ttf');
+		font-family: 'Noto Sans';
+		src: local('Noto Sans'), local('noto sans'), local('Noto-Sans'), local('noto-sans'),
+			url('/fonts/NotoSans-VariableFont_wdth,wght.ttf');
 	}
+
 	@font-face {
-		font-family: 'Roboto Mono';
-		src: local('Roboto Mono'), local('roboto mono'), local('Roboto-Mono'), local('roboto-mono'),
-			url('/fonts/RobotoMono-VariableFont_wght.ttf');
+		font-family: 'Noto Sans Mono';
+		src: local('Noto Sans Mono'), local('noto sans mono'), local('Noto-Sans-Mono'),
+			local('noto-sans-mono'), url('/fonts/NotoSansMono-VariableFont_wdth,wght.ttf');
 	}
 }
 

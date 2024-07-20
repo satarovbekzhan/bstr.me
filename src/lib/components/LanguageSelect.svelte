@@ -14,51 +14,22 @@
 	};
 </script>
 
-<div
-	class="relative group"
-	tabindex="0"
-	on:mouseenter={(event) => {
-		event.currentTarget.setAttribute('open', '');
-	}}
-	on:mouseleave={(event) => {
-		event.currentTarget.removeAttribute('open');
-	}}
-	on:keydown={(event) => {
-		if (event.key === 'Enter') {
-			const isOpen = event.currentTarget.hasAttribute('open');
-			if (isOpen) {
-				event.currentTarget.removeAttribute('open');
-			} else {
-				event.currentTarget.setAttribute('open', '');
-			}
-		}
-	}}
->
+<div role="menu" class="relative group" tabindex="0">
 	<div
-		class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-open:bg-neutral-100 dark:group-open:bg-neutral-900 pr-2 py-2 lg:py-1"
+		aria-label={m.language()}
+		class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-focus-within:bg-neutral-100 dark:group-focus-within:bg-neutral-900 pr-2 py-2 lg:py-1 aspect-square"
 	>
 		<Translate2Editor
 			tabindex="-1"
 			aria-hidden="true"
 			focusable="false"
-			class="w-4 h-4 inline-block"
+			class="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 inline-block pointer-events-none"
 		/>
-		<span class="hidden lg:inline">{m.language()}</span>
 	</div>
-	<div class="absolute hidden group-open:flex group-open:flex-col top-8 pt-4 right-0">
+	<div
+		class="pointer-events-none group-focus-within:pointer-events-auto opacity-0 group-focus-within:opacity-100 absolute flex flex-col top-6 md:top-5 lg:top-4 pt-4 md:pt-8 lg:pt-12 -right-10 md:-right-[3.25rem] lg:-right-16"
+	>
 		<ul
-			role="menu"
-			class="p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-44"
-		>
-			<li role="menuitem">
-				<a
-					href="/"
-					class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
-					>Soon</a
-				>
-			</li>
-		</ul>
-		<!-- <ul
 			role="menu"
 			class="p-2 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900 w-44"
 		>
@@ -68,11 +39,11 @@
 						href={i18n.route($page.url.pathname)}
 						hreflang={lang}
 						aria-current={lang === languageTag() ? 'page' : undefined}
-						class="flex items-center gap-2 rounded-sm px-2 py-1 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
+						class="flex items-center gap-2 rounded-sm px-2 py-1 text-lg md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full"
 						>{languageTagsMap[lang]}</a
 					>
 				</li>
 			{/each}
-		</ul> -->
+		</ul>
 	</div>
 </div>
