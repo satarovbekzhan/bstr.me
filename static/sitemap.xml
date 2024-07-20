@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://www.bstr.me/en/sitemap.xml</loc>
+    <lastmod>2024-07-23</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.bstr.me/ru/sitemap.xml</loc>
+    <lastmod>2024-07-23</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.bstr.me/de/sitemap.xml</loc>
+    <lastmod>2024-07-23</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.bstr.me/tr/sitemap.xml</loc>
+    <lastmod>2024-07-23</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.bstr.me/kg/sitemap.xml</loc>
+    <lastmod>2024-07-23</lastmod>
+  </sitemap>
+</sitemapindex>

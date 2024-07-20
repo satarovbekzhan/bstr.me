@@ -25,6 +25,7 @@ body {
 		background-color 0.1s ease-in,
 		color 0.1s ease-in;
 	scroll-behavior: smooth;
+	overflow-y: scroll;
 }
 
 .grecaptcha-badge {
