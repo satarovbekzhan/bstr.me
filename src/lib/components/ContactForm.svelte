@@ -10,15 +10,21 @@
 
 <svelte:head>
 	<script
+		defer
 		src={`https://www.google.com/recaptcha/api.js?render=${PUBLIC_GOOGLE_RECATCHA_SITE_KEY}`}
 	></script>
-	{@html `<script defer>
-		grecaptcha.ready(function () {
-			grecaptcha
-				.execute('${PUBLIC_GOOGLE_RECATCHA_SITE_KEY}', { action: 'validate_captcha' })
-				.then(function (token) {
-					document.getElementById('recaptcha').value = token;
+	{@html `<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const script = document.querySelector('script[src^="https://www.google.com/recaptcha/api.js"]');
+			script.addEventListener('load', function() {
+				grecaptcha.ready(function() {
+					grecaptcha
+						.execute('${PUBLIC_GOOGLE_RECATCHA_SITE_KEY}', { action: 'validate_captcha' })
+						.then(function (token) {
+							document.getElementById('recaptcha').value = token;
+						});
 				});
+			});
 		});
 	</script>`}
 </svelte:head>
@@ -76,7 +82,7 @@
 			placeholder="Name"
 			required
 			disabled={status === 'loading'}
-			class="appearance-none block w-full bg-neutral-100 dark:bg-neutral-900 text-gray-700 rounded-t-sm rounded-b-none py-2 px-3 focus:outline-none focus:bg-neutral-200 dark:focus:bg-neutral-800"
+			class="appearance-none block w-full bg-neutral-100 dark:bg-neutral-900 text-black dark:text-white placeholder:text-neutral-600 dark:placeholder:text-neutral-400 rounded-t-sm rounded-b-none py-2 px-3 focus:outline-none focus:bg-neutral-200 dark:focus:bg-neutral-800"
 		/>
 		<input
 			name="email"
@@ -84,7 +90,7 @@
 			placeholder="Email"
 			required
 			disabled={status === 'loading'}
-			class="appearance-none block w-full bg-neutral-100 dark:bg-neutral-900 text-gray-700 rounded-none py-2 px-3 focus:outline-none focus:bg-neutral-200 dark:focus:bg-neutral-800"
+			class="appearance-none block w-full bg-neutral-100 dark:bg-neutral-900 text-black dark:text-white placeholder:text-neutral-600 dark:placeholder:text-neutral-400 rounded-none py-2 px-3 focus:outline-none focus:bg-neutral-200 dark:focus:bg-neutral-800"
 		/>
 		<textarea
 			name="message"
@@ -92,7 +98,7 @@
 			placeholder="Your message"
 			required
 			disabled={status === 'loading'}
-			class="appearance-none block w-full bg-neutral-100 dark:bg-neutral-900 text-gray-700 rounded-b-sm rounded-t-none py-2 px-3 focus:outline-none focus:bg-neutral-200 dark:focus:bg-neutral-800"
+			class="appearance-none block w-full bg-neutral-100 dark:bg-neutral-900 text-black dark:text-white placeholder:text-neutral-600 dark:placeholder:text-neutral-400 rounded-b-sm rounded-t-none py-2 px-3 focus:outline-none focus:bg-neutral-200 dark:focus:bg-neutral-800"
 		></textarea>
 		<button
 			type="submit"

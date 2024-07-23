@@ -7,16 +7,15 @@
 		font-family: 'Noto Sans';
 		src: local('Noto Sans'), local('noto sans'), local('Noto-Sans'), local('noto-sans'),
 			url('/fonts/NotoSans-VariableFont_wdth,wght.ttf');
+		font-display: fallback;
 	}
 
 	@font-face {
 		font-family: 'Noto Sans Mono';
 		src: local('Noto Sans Mono'), local('noto sans mono'), local('Noto-Sans-Mono'),
 			local('noto-sans-mono'), url('/fonts/NotoSansMono-VariableFont_wdth,wght.ttf');
+		font-display: fallback;
 	}
-}
-
-@layer components {
 }
 
 body {

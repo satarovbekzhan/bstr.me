@@ -14,8 +14,10 @@
 	};
 </script>
 
-<div role="menu" class="relative group" tabindex="0">
-	<div
+<div role="menubar" class="relative group">
+	<button
+		role="menuitem"
+		aria-haspopup="true"
 		aria-label={m.language()}
 		class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-focus-within:bg-neutral-100 dark:group-focus-within:bg-neutral-900 pr-2 py-2 lg:py-1 aspect-square"
 	>
@@ -25,7 +27,7 @@
 			focusable="false"
 			class="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline-block pointer-events-none"
 		/>
-	</div>
+	</button>
 	<div
 		class="pointer-events-none group-focus-within:pointer-events-auto opacity-0 group-focus-within:opacity-100 absolute flex flex-col top-10 md:top-12 lg:top-14 -right-10 md:-right-12 lg:-right-14"
 	>
@@ -44,11 +46,13 @@
 					>
 				</li>
 			{/each} -->
-			<p
-				class="rounded-sm px-2 py-1 text-base md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full text-nowrap min-w-48"
-			>
-				Soon
-			</p>
+			<li role="menuitem">
+				<p
+					class="rounded-sm px-2 py-1 text-base md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full text-nowrap min-w-48"
+				>
+					Soon
+				</p>
+			</li>
 		</ul>
 	</div>
 </div>

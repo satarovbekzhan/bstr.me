@@ -8,6 +8,7 @@
 </script>
 
 <svelte:head>
+	<link rel="preconnect" href="https://static.hotjar.com" />
 	{@html `<script>
 		(function (h, o, t, j, a, r) {
 			h.hj =
