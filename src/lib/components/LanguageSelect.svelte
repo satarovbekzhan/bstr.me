@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { Translate2Editor } from 'svelte-remix';
-	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
-	import { i18n } from '$lib/i18n.js';
-	import { page } from '$app/stores';
+	// import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+	// import { i18n } from '$lib/i18n.js';
+	// import { page } from '$app/stores';
 	import * as m from '$lib/paraglide/messages.js';
 
-	const languageTagsMap = {
-		en: 'English',
-		ru: 'Русский',
-		de: 'Deutsch',
-		tr: 'Türkçe',
-		kg: 'Кыргызча'
-	};
+	// const languageTagsMap = {
+	// 	en: 'English',
+	// 	ru: 'Русский',
+	// 	de: 'Deutsch',
+	// 	tr: 'Türkçe',
+	// 	kg: 'Кыргызча'
+	// };
 </script>
 
-<div role="menubar" class="relative group">
+<div role="menubar" class="relative group" tabindex="0">
 	<button
 		role="menuitem"
 		aria-haspopup="true"
@@ -50,7 +50,7 @@
 				<p
 					class="rounded-sm px-2 py-1 text-base md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full text-nowrap min-w-48"
 				>
-					Soon
+					Under construction
 				</p>
 			</li>
 		</ul>

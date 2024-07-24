@@ -42,7 +42,7 @@
 
 		<LanguageSelect />
 
-		<div role="menubar" class="relative group">
+		<div role="menubar" class="relative group" tabindex="0">
 			<button
 				role="menuitem"
 				aria-haspopup="true"
