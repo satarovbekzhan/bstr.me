@@ -15,8 +15,8 @@
 		'[&_h1]:text-balance [&_h1]:text-2xl [&_h1]:md:text-4xl [&_h1]:lg:text-5xl [&_h1]:font-black [&_h1]:mt-2 [&_h1]:md:mt-3 [&_h1]:lg:mt-4',
 		'[&_h2]:text-balance [&_h2]:text-base [&_h2]:md:text-xl [&_h2]:lg:text-2xl [&_h2]:font-bold',
 		'[&_p]:text-balance [&_p]:text-base [&_p]:md:text-xl [&_p]:lg:text-2xl [&_p]:whitespace-pre-wrap',
-		"[&_ul]:list-['–_'] [&_ul]:text-balance [&_ul]:pl-8 [&_ul]:mt-1 [&_ul]:md:mt-2 [&_ul]:lg:mt-3",
-		'[&_li]:text-balance [&_li]:text-base [&_li]:md:text-xl [&_li]:lg:text-2xl [&_li]:whitespace-pre-wrap [&_li]:pl-2'
+		"[&_ul]:list-['–_'] [&_ul]:text-balance [&_ul]:pl-4 [&_ul]:md:pl-6 [&_ul]:lg:pl-8 [&_ul]:mt-1 [&_ul]:md:mt-2 [&_ul]:lg:mt-3",
+		'[&_li]:text-balance [&_li]:text-base [&_li]:md:text-xl [&_li]:lg:text-2xl [&_li]:whitespace-pre-wrap [&_li]:pl-1 [&_li]:md:pl-1.5 [&_li]:lg:pl-2'
 	)}
 >
 	<section id="summary">

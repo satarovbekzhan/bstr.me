@@ -9,10 +9,10 @@
 			label: m.about(),
 			href: '/#about-me'
 		},
-		// {
-		// 	label: m.services(),
-		// 	href: '/services'
-		// },
+		{
+			label: m.services(),
+			href: '/services'
+		},
 		{
 			label: m.cv(),
 			href: '/cv'
@@ -42,10 +42,11 @@
 
 		<LanguageSelect />
 
-		<div role="menubar" class="relative group" tabindex="0">
+		<div role="menubar" class="relative group">
 			<button
 				role="menuitem"
 				aria-haspopup="true"
+				tabindex="0"
 				aria-label={m.menu()}
 				class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-focus-within:bg-neutral-100 dark:group-focus-within:bg-neutral-900 py-2 md:py-1 aspect-square"
 			>
@@ -70,7 +71,7 @@
 					class="flex flex-col gap-1 p-1 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-800 w-fit"
 				>
 					{#each links as { label, href }}
-						<li role="menuitem">
+						<li role="menuitem" tabindex="0">
 							<a
 								{href}
 								class="flex items-center gap-2 rounded-sm px-2 py-1 text-base md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full text-nowrap overflow-hidden"

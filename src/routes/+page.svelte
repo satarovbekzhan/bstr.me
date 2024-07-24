@@ -23,7 +23,7 @@
 				href="/cv"
 				class="rounded-sm px-2 md:px-2 lg:px-3 py-1 md:py-1 lg:py-2 text-base md:text-md lg:text-lg uppercase bg-black dark:bg-white hover:opacity-90 active:opacity-80 text-white dark:text-black font-semibold cursor-pointer"
 			>
-				Check out my Resume ➔
+				Check out my Resume/CV
 			</a>
 		</div>
 		<div class="w-full overflow-x-hidden">

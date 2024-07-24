@@ -14,10 +14,11 @@
 	// };
 </script>
 
-<div role="menubar" class="relative group" tabindex="0">
+<div role="menubar" class="relative group">
 	<button
 		role="menuitem"
 		aria-haspopup="true"
+		tabindex="0"
 		aria-label={m.language()}
 		class="flex items-center gap-2 w-fit rounded-sm px-2 text-base hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer group-focus-within:bg-neutral-100 dark:group-focus-within:bg-neutral-900 pr-2 py-2 lg:py-1 aspect-square"
 	>
@@ -36,7 +37,7 @@
 			class="flex flex-col gap-1 p-1 rounded-sm shadow-xl bg-white dark:bg-black border border-neutral-100 dark:border-neutral-800 w-fit"
 		>
 			<!-- {#each availableLanguageTags as lang}
-				<li role="menuitem">
+				<li role="menuitem" tabindex="0">
 					<a
 						href={i18n.route($page.url.pathname)}
 						hreflang={lang}
@@ -48,7 +49,7 @@
 			{/each} -->
 			<li role="menuitem">
 				<p
-					class="rounded-sm px-2 py-1 text-base md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full text-nowrap min-w-48"
+					class="rounded-sm px-2 py-1 text-base md:text-xl lg:text-2xl hover:bg-neutral-100 dark:hover:bg-neutral-900 w-full text-nowrap"
 				>
 					Under construction
 				</p>

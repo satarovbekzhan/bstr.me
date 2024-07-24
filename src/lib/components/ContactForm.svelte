@@ -10,20 +10,17 @@
 
 <svelte:head>
 	<script
-		defer
 		src={`https://www.google.com/recaptcha/api.js?render=${PUBLIC_GOOGLE_RECATCHA_SITE_KEY}`}
+		defer
 	></script>
 	{@html `<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			const script = document.querySelector('script[src^="https://www.google.com/recaptcha/api.js"]');
-			script.addEventListener('load', function() {
-				grecaptcha.ready(function() {
-					grecaptcha
-						.execute('${PUBLIC_GOOGLE_RECATCHA_SITE_KEY}', { action: 'validate_captcha' })
-						.then(function (token) {
-							document.getElementById('recaptcha').value = token;
-						});
-				});
+			grecaptcha.ready(function() {
+				grecaptcha
+					.execute('${PUBLIC_GOOGLE_RECATCHA_SITE_KEY}', { action: 'validate_captcha' })
+					.then(function (token) {
+						document.getElementById('recaptcha').value = token;
+					});
 			});
 		});
 	</script>`}
